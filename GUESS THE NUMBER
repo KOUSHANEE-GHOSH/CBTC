@@ -1,0 +1,24 @@
+import java.util.Scanner;
+import java.lang.Math;
+public class Guess_The_Number{
+    public static void main(String[] args){
+        int n = (int) (Math.random() * 100 ) + 1;
+        Scanner sc = new Scanner(System.in);
+        int attempts = 10;
+        while(attempts > 0) {
+            System.out.println("Write your guessing number:");
+            int g = sc.nextInt();
+            if (g == n) {
+                System.out.println("Congratulations!! You have guessed it Right!!");
+                break;
+            }
+            else if (g > n) {
+                System.out.println("Wrong :( Try a smaller number. You have " + (attempts-1) + "left");
+                attempts--;
+            } else {
+                System.out.println("Wrong :( Try a greater number. You have " + (attempts-1) + "left");
+                attempts--;
+            }
+        }
+    }
+}
